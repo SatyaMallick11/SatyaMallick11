@@ -1,0 +1,30 @@
+ #include<stdio.h>
+ #include<math.h>
+
+ void findroots(float a,float b,float c){
+ 
+     float d,r1,r2,rp,ip;
+     d=(b*b)-(4*a*c);
+     if(d>0){
+         r1=(-b+sqrt(d))/2*a;
+         r2=(-b-sqrt(d))/2*a;
+         printf("real and distint roots are:%.2fand%.2f",r1,r2);}
+    else if(d==0){
+        r1=r2=-b/(2*a);
+        printf("real and equal roots are:%.2fand%.2f",r1,r2);}
+    else{
+        rp=-b/(2*a);
+        ip=sqrt(-d)/(2*a);
+        printf("complex roots are %.2f+%.2fi and %.2f-%.2fi",rp,ip,rp,ip);
+    }}
+    int main(){
+        float a,b,c;
+        printf("enter a,b,c\n");
+        scanf("%f%f%f",&a,&b,&c);
+        if(a==0){
+            printf("not a quadratic");
+            
+        }
+        findroots(a,b,c);
+        return 0;
+    }
